@@ -13,9 +13,6 @@ class AppRouter {
   static const String signup = 'signup';
 
 
-
-  
-
   static get routes => {
         welcome: (context) => const WelcomeScreen(),
         product: (context) => const ProductScreen(),

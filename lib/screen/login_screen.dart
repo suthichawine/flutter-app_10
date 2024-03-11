@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/app_route.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class LoginScreen extends StatelessWidget {
         children: [
           // Background image
           Image.asset(
-            'images/blue.jpg',
+            'images/tea.jpg',
 
             width: MediaQuery.of(context)
                 .size
@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
                         color: Colors.black87), // เปลี่ยนขนาดและสีข้อความ
                   ),
                   const SizedBox(height: 16),
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
                       labelText: 'E-mail ',
                       labelStyle: TextStyle(
@@ -47,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                         color: Colors.black87), // เปลี่ยนสีข้อความใน TextField
                   ),
                   const SizedBox(height: 16),
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
                       labelText: 'Password',
                       labelStyle: TextStyle(
@@ -79,9 +79,12 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(height: 15),
                   TextButton(
                     onPressed: () {},
-                    child: const Text('ลืมรหัสผ่าน?',style: TextStyle(
-                      color: Colors.black87, fontWeight: FontWeight.bold, // ตั้งค่าตัวหนา)
-                    ),
+                    child: const Text(
+                      'ลืมรหัสผ่าน?',
+                      style: TextStyle(
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold, // ตั้งค่าตัวหนา)
+                      ),
                     ),
                   ),
                 ],

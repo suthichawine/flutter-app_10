@@ -28,23 +28,13 @@ class WelcomeScreen extends StatelessWidget {
               style: TextStyle(fontSize: 25),
             ),
             const SizedBox(height: 32),
+            SizedBox(height: 20), // เพิ่มระยะห่างระหว่างปุ่ม
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, AppRouter.home);
+                Navigator.pushNamed(
+                    context,AppRouter.home); // นำทางไปยังหน้า Register
               },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange.shade200,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(18.0), // รูปร่างของปุ่ม
-                ),
-              ),
-              child: const Text(
-                "Get started",
-                style: TextStyle(
-                  color: Colors.pinkAccent,
-                  fontWeight: FontWeight.bold, // ตั้งค่าตัวหนา
-                ),
-              ),
+              child: Text('Get started'), // ข้อความบนปุ่ม "Get started"
             ),
           ],
         ),
