@@ -7,19 +7,12 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
+      resizeToAvoidBottomInset: false,
+      body: Column(
         children: [
           // Background image
           Image.asset(
             'images/tea.jpg',
-
-            width: MediaQuery.of(context)
-                .size
-                .width, // ขนาดเท่ากับความกว้างของหน้าจอ
-            height: MediaQuery.of(context)
-                .size
-                .height, // ขนาดเท่ากับความสูงของหน้าจอ
-            fit: BoxFit.cover, // ให้ภาพขยายเต็มพื้นที่ของหน้าจอ
           ),
           // Content
           Center(
@@ -29,12 +22,15 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Login',
-                    style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black87), // เปลี่ยนขนาดและสีข้อความ
+                  const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      'Login',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87), // เปลี่ยนขนาดและสีข้อความ
+                    ),
                   ),
                   const SizedBox(height: 16),
                   const TextField(

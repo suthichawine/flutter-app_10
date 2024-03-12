@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ProductScreen extends StatelessWidget {
-  const ProductScreen({Key? key}) : super(key: key);
+   ProductScreen({Key? key}) : super(key: key);
+
+  // รายการเมนูชานมพร้อมราคา
+  final List<Map<String, dynamic>> milkTeaMenu = [
+    {'name': 'ชานมไต้หวัน', 'price': 50},
+    {'name': 'ชานมเนสคาเฟ', 'price': 50},
+    {'name': 'ชานมเย็น', 'price': 50},
+    {'name': 'ชานมนมสด', 'price': 50},
+    {'name': 'ชานมเย็นโกโก้', 'price': 50},
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +29,12 @@ class ProductScreen extends StatelessWidget {
         ],
       ),
       body: ListView.builder(
-        itemCount: 10, // จำนวนสินค้า
+        itemCount: milkTeaMenu.length,
         itemBuilder: (context, index) {
           // สร้างไอเท็มของรายการสินค้าแต่ละรายการ
           return ListTile(
-            title: Text('Product ${index + 1}'),
+            title: Text(milkTeaMenu[index]['name']),
+            subtitle: Text('Price: ${milkTeaMenu[index]['price']} บาท'),
             trailing: IconButton(
               icon: Icon(Icons.edit),
               onPressed: () {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/app_route.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({Key? key}) : super(key: key);
+  const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             // Add the image widget here
             Image.asset(
-              'images/tea.jpg',
+              'images/blue.jpg',
               width: 500,
               height: 300,
             ),
@@ -28,13 +28,13 @@ class WelcomeScreen extends StatelessWidget {
               style: TextStyle(fontSize: 25),
             ),
             const SizedBox(height: 32),
-            SizedBox(height: 20), // เพิ่มระยะห่างระหว่างปุ่ม
+            const SizedBox(height: 20), // เพิ่มระยะห่างระหว่างปุ่ม
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamed(
                     context,AppRouter.home); // นำทางไปยังหน้า Register
               },
-              child: Text('Get started'), // ข้อความบนปุ่ม "Get started"
+              child: const Text('Get started'), // ข้อความบนปุ่ม "Get started"
             ),
           ],
         ),

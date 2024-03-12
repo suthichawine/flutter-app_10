@@ -15,7 +15,7 @@ class AppRouter {
 
   static get routes => {
         welcome: (context) => const WelcomeScreen(),
-        product: (context) => const ProductScreen(),
+        product: (context) =>  ProductScreen(),
         login:(context) => const LoginScreen(),
         home:(context) => const HomeScreen(),
         signup: (context) => const SignupScreen(),
