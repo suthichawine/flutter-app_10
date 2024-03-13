@@ -1,11 +1,16 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application/app_route.dart';
+import 'package:flutter_application/service/api_service.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController passwordController = TextEditingController();
+    final TextEditingController emailController = TextEditingController();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Column(
@@ -33,29 +38,45 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  const TextField(
-                    decoration: InputDecoration(
+                  TextField(
+                    controller: emailController,
+                    decoration: const InputDecoration(
                       labelText: 'E-mail ',
                       labelStyle: TextStyle(
                           color: Colors.black87), // เปลี่ยนสีข้อความ Label
                     ),
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black87), // เปลี่ยนสีข้อความใน TextField
                   ),
                   const SizedBox(height: 16),
-                  const TextField(
-                    decoration: InputDecoration(
+                  TextField(
+                    obscureText: true,
+                    controller: passwordController,
+                    decoration: const InputDecoration(
                       labelText: 'Password',
                       labelStyle: TextStyle(
                           color: Colors.black87), // เปลี่ยนสีข้อความ Label
                     ),
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black87), // เปลี่ยนสีข้อความใน TextField
                   ),
                   const SizedBox(height: 16),
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, AppRouter.product);
+                    onPressed: () async {
+                      final ApiService service = ApiService();
+                      final result = await service.signInWithEmail(
+                        emailController.text,
+                        passwordController.text,
+                      );
+
+                      print(result);
+                      if (result == "ok") {
+                        Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          AppRouter.product,
+                          (route) => false, // ลบทุกหน้าออกจาก Stack
+                        );
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.lightBlue, // สีพื้นหลังปุ่ม
