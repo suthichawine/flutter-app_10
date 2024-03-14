@@ -93,17 +93,6 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 15),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'ลืมรหัสผ่าน?',
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.bold, // ตั้งค่าตัวหนา)
-                      ),
-                    ),
-                  ),
                 ],
               ),
             ),

@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/app_route.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key, Key? key});
+  const WelcomeScreen({Key? key})
+      : super(key: key); // เพิ่ม super(key: key) ที่นี่
 
   @override
   Widget build(BuildContext context) {

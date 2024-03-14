@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/app_route.dart';
 import 'package:flutter_application/service/api_service.dart';
-import 'package:get/get.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});

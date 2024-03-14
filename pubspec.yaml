@@ -42,6 +42,7 @@ dependencies:
   firebase_storage: ^11.6.9
   cloud_firestore: ^4.15.8
   font_awesome_flutter: ^10.7.0
+  ffi: ^2.1.0
 
   
 

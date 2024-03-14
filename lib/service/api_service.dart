@@ -8,7 +8,7 @@ class ApiService {
 
   Future<String?> signInWithEmail(String email, String password) async {
     try {
-      final result = _auth.signInWithEmailAndPassword(
+      final UserCredential result = await _auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
